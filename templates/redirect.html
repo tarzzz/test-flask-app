@@ -1,0 +1,17 @@
+<html>
+<script type="text/javascript">
+    var param_obj = {}
+    var params = (window.location.hash.substr(1)).split("&");
+    for (var i in params) {
+        m = params[i].split("=")
+        param_obj[m[0]] = m[1]
+    }
+    document.write(JSON.stringify(param_obj))
+
+    // Save it in cookie
+    document.cookie = "access_token=" + param_obj.access_token
+
+</script>
+
+Authenticated, Visit <a href="/profile"> profile </a>
+</html>
